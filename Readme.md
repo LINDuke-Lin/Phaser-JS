@@ -30,3 +30,7 @@
 ```javascript
  let game = new Phaser.Game(config)
 ```
+
+4. 相關api
+- 載入資源 `preload`
+- 初始化 `create`
