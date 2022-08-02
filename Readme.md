@@ -34,3 +34,4 @@
 4. 相關api
 - 載入資源 `preload`
 - 初始化 `create`
+- 更新畫面 `update`
