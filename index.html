@@ -48,7 +48,7 @@
         let height = this.sys.game.config.height
         bg.setPosition(width / 2, height / 2)
 
-        this.player = this.add.sprite(50, 223, 'player')
+        this.player = this.add.sprite(50, 223, 'player1')
         //this.player.setAngle(20)
 
     }
@@ -64,14 +64,10 @@
     let index = 0;
     //更新畫面
     scene.update = function () {
-
-
-
-        this.player.setTexture(playerArr[index % 6]);
-        index++;
-        console.log(index);
         if (this.input.activePointer.isDown) {
             this.player.x += this.playerSpeed
+            this.player.setTexture(playerArr[index % 6]);
+            index++;
         }
 
         // this.player.angle += 0.5
