@@ -28,8 +28,16 @@
     scene.preload = function () {
         this.load.image('bg1', './img/background.webp');
         this.load.image('bg2', './img/background2.webp');
-        this.load.image('player', './img/GG.gif');
+        this.load.image('player1', './img/Goblin/frame-12.gif');
+        this.load.image('player2', './img/Goblin/frame-13.gif');
+        this.load.image('player3', './img/Goblin/frame-14.gif');
+        this.load.image('player4', './img/Goblin/frame-15.gif');
+        this.load.image('player5', './img/Goblin/frame-16.gif');
+        this.load.image('player6', './img/Goblin/frame-17.gif');
     }
+
+
+    const playerArr = ['player1', 'player2', 'player3', 'player4', 'player5', 'player6']
 
     // 建立地圖
     scene.create = function () {
@@ -41,17 +49,27 @@
         bg.setPosition(width / 2, height / 2)
 
         this.player = this.add.sprite(50, 223, 'player')
-        this.player.setAngle(20)
+        //this.player.setAngle(20)
+
     }
+
 
     scene.init = function () {
         // 設定 player 的速度
         this.playerSpeed = 1
+
+
     }
 
-
+    let index = 0;
     //更新畫面
     scene.update = function () {
+
+
+
+        this.player.setTexture(playerArr[index % 6]);
+        index++;
+        console.log(index);
         if (this.input.activePointer.isDown) {
             this.player.x += this.playerSpeed
         }
