@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Game</title>
 </head>
 
 <body>
@@ -49,16 +49,16 @@
         bg.setPosition(width / 2, height / 2)
 
         this.player = this.add.sprite(50, 223, 'player1')
+        this.player2 = this.add.sprite(50, 123, 'player1')
         //this.player.setAngle(20)
 
     }
 
 
     scene.init = function () {
-        // 設定 player 的速度
+        // 設定 player 的速度        
         this.playerSpeed = 1
-
-
+        this.player2Speed = 2
     }
 
     let index = 0;
@@ -67,6 +67,9 @@
         if (this.input.activePointer.isDown) {
             this.player.x += this.playerSpeed
             this.player.setTexture(playerArr[index % 6]);
+
+            this.player2.x += this.player2Speed
+            this.player2.setTexture(playerArr[index % 6]);
             index++;
         }
 
