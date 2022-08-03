@@ -44,10 +44,18 @@
         this.load.image('player4', './img/Goblin/frame-15.gif');
         this.load.image('player5', './img/Goblin/frame-16.gif');
         this.load.image('player6', './img/Goblin/frame-17.gif');
+
+        this.load.image('player11', './img/Goblin1/frame-12.gif');
+        this.load.image('player12', './img/Goblin1/frame-13.gif');
+        this.load.image('player13', './img/Goblin1/frame-14.gif');
+        this.load.image('player14', './img/Goblin1/frame-15.gif');
+        this.load.image('player15', './img/Goblin1/frame-16.gif');
+        this.load.image('player16', './img/Goblin1/frame-17.gif');
     }
 
 
     const playerArr = ['player1', 'player2', 'player3', 'player4', 'player5', 'player6']
+    const player2Arr = ['player11', 'player12', 'player13', 'player14', 'player15', 'player16']
 
     // 建立地圖
     scene.create = function () {
@@ -59,7 +67,7 @@
         bg.setPosition(width / 2, height / 2)
 
         this.player = this.add.sprite(50, 223, 'player1')
-        this.player2 = this.add.sprite(50, 123, 'player1')
+        this.player2 = this.add.sprite(50, 123, 'player11')
         //this.player.setAngle(20)
 
     }
@@ -79,7 +87,7 @@
             this.player.setTexture(playerArr[index % 6]);
 
             this.player2.x += this.player2Speed
-            this.player2.setTexture(playerArr[index % 6]);
+            this.player2.setTexture(player2Arr[index % 6]);
             index++;
         }
     }
