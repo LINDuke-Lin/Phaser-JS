@@ -24,6 +24,16 @@
 
     }
 
+    function getRandom() {
+        let res = Math.floor(Math.random() * 4);
+
+        if (res === 0)
+            res += 1;
+
+        console.log('速度' + res);
+        return res;
+    }
+
     //載入素材 
     scene.preload = function () {
         this.load.image('bg1', './img/background.webp');
@@ -57,8 +67,8 @@
 
     scene.init = function () {
         // 設定 player 的速度        
-        this.playerSpeed = 1
-        this.player2Speed = 2
+        this.playerSpeed = getRandom();
+        this.player2Speed = getRandom();
     }
 
     let index = 0;
@@ -72,25 +82,6 @@
             this.player2.setTexture(playerArr[index % 6]);
             index++;
         }
-
-        // this.player.angle += 0.5
-        // gameTime++;
-        // if (gameTime === 1000) {
-        //     let bg = this.add.sprite(0, 0, 'bg2')
-
-        //     //取得寬高
-        //     let width = this.sys.game.config.width
-        //     let height = this.sys.game.config.height
-        //     bg.setPosition(width / 2, height / 2)
-        // } else if (gameTime === 2000) {
-        //     gameTime = 0;
-        //     let bg = this.add.sprite(0, 0, 'bg1')
-
-        //     //取得寬高
-        //     let width = this.sys.game.config.width
-        //     let height = this.sys.game.config.height
-        //     bg.setPosition(width / 2, height / 2)
-        // }
     }
 
     let game = new Phaser.Game(config)
