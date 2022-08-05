@@ -13,15 +13,22 @@
 </body>
 
 <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
-<script src="./lib/scene.js"></script>
-
-
+<script src="./lib/runScene.js"></script>
 <script>
 
-    const playerArr = ['player1', 'player2', 'player3', 'player4', 'player5', 'player6']
-    const player2Arr = ['player11', 'player12', 'player13', 'player14', 'player15', 'player16']
+    let scene1 = new runScene();
+
+    let config = {
+        type: Phaser.AUTO, // 會使用 WebGL 或 Canvas API，AUTO 是讓 Phaser 決定
+        width: 640,
+        height: 320
+    };
+
     let game = new Phaser.Game(config)
 
+    game.scene.add('runScene', scene1);
+
+    game.scene.start('runScene');
 </script>
 
 </html>
