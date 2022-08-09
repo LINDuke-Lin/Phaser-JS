@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./style/loadInit.css?0938">
-    <title>Game2</title>
+    <title>Game3</title>
 </head>
 
 <body>
@@ -14,9 +14,11 @@
 
     <script src="./lib/loadInit.js"></script>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <script src="./lib/gameStart.js"></script>
     <script src="./lib/alpacaScene.js"></script>
     <script>
-        // 宣告一個場景
+        // 宣告場景
+        let scene1 = new gameStart();
         let scene = new alpacaScene();
         // 宣告場景的基本資訊
         let config = {
@@ -28,9 +30,10 @@
         //啟動遊戲
         let game = new Phaser.Game(config);
 
+        game.scene.add('gameStart', scene1);
         game.scene.add('alpacaScene', scene);
 
-        game.scene.start('alpacaScene');
+        game.scene.start('gameStart');
     </script>
 
 </body>
