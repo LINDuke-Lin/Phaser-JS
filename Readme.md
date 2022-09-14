@@ -1,6 +1,6 @@
 # Phaser3 js 遊戲測試
 
-## [DEMO](https://linduke-lin.github.io/Phaser-JS/) 
+## [DEMO](https://lonelyyeezhichicken.github.io/Phaser-JS/) 
 
 
 ### 筆記
